@@ -15,4 +15,12 @@ router.post("/", async (req,res)=>{
   res.send("mail send successfully");
 })
 
+router.get("/register", (req,res,next)=>{
+  res.render("register")
+})
+
+router.get("/home", (req,res)=>{
+  res.render("home")
+})
+
 module.exports = router;

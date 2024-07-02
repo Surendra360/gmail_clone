@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%-include("./partials/nav")%>
+
+    <h1>Register Now</h1>
+
+    <form action="/register" method="post">
+        <input type="text" placeholder="Enter full name" name="name">
+        <input type="number" placeholder="Enter Phone Number" name="phone">
+        <input type="email" placeholder="email Address" name="email">
+        <input type="password" placeholder="New Password" name="password1">
+        <input type="password" placeholder="confirm Password" name="password2">
+        <button>Register</button>
+    </form>
+    
+</body>
+</html>
