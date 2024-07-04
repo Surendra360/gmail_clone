@@ -1,23 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <%-include("./partials/nav")%>
+<%-include("./partials/header")%>
+<%-include("./partials/nav")%>
 
-    <h1>Register Now</h1>
-
-    <form action="/register" method="post">
-        <input type="text" placeholder="Enter full name" name="name">
-        <input type="number" placeholder="Enter Phone Number" name="phone">
-        <input type="email" placeholder="email Address" name="email">
-        <input type="password" placeholder="New Password" name="password1">
-        <input type="password" placeholder="confirm Password" name="password2">
-        <button>Register</button>
-    </form>
+<div class="h-screen flex flex-col items-center gap-10 mt-20">
+    <h1 class="text-4xl border-b-2 border-gray-600 py-2 ">New User Registration</h1>
+    <form class="w-[30%] flex flex-col gap-5" action="/register" method="post">
+        <div class="flex-col flex gap-2">
+            <label >Full Name</label>
+            <input class="outline-none px-2 border-b-2 border-gray-500 border-rounderd" type="text" placeholder="abc" name="name">
+        </div>
+        <div class="flex-col flex gap-2">
+            <label >Username</label>
+            <input class="outline-none px-2 border-b-2 border-gray-500 border-rounderd" type="text" placeholder="abc123" name="username">
+        </div>
+        
+        <div class="flex-col flex gap-2 mt-2">
+            <label>Phone Number</label>
+            <input class="outline-none px-2 border-b-2 border-gray-500 border-rounderd" type="text" placeholder="+91" name="phoone">
+        </div>
+        <div class="flex-col flex gap-2 mt-2">
+            <label >Enter email</label>
+            <input class="outline-none px-2 border-b-2 border-gray-500 border-rounderd" type="text" placeholder="abc@gmail.com" name="email">
+        </div>
+        
+        <div class="flex-col flex gap-2 mt-2">
+            <label >Create password</label>
+            <input class="outline-none px-2 border-b-2 border-gray-500 border-rounderd" type="password" placeholder="******" name="password">
+        </div>
     
-</body>
-</html>
+        <button class="mt-5 bg-blue-800 hover:bg-blue-700 py-2 rounded text-white font-semibold text-2sm">Submit</button>
+        <p>Alrady register - <a class="text-blue-800 hover:text-blue-700" href="/login">login now?</a></p>
+    </form>
+  
+</div>
+<%-include("./partials/footer")%>

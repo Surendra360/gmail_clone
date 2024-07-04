@@ -1,12 +1,25 @@
 <%-include("./partials/header")%>
 <%-include("./partials/nav")%>
 
-<h1>Register Now</h1>
+<div class="h-screen flex flex-col items-center gap-10 mt-20">
+    <h1 class="text-4xl border-b-2 border-gray-600 py-2 ">User Login</h1>
+    <form class="w-[30%] flex flex-col gap-5" action="/login" method="post">
+        <div class="flex-col flex gap-2">
+            <label >Enter Username</label>
+            <input class="outline-none px-2 border-b-2 border-gray-500 border-rounderd" type="text" placeholder="abc123" name="username">
+        </div>
+        
+        <div class="flex-col flex gap-2 mt-2">
+            <label >Enter your password</label>
+            <input class="outline-none px-2 border-b-2 border-gray-500 border-rounderd" type="password" placeholder="******" name="password">
+        </div>
 
-<form action="/login" method="post">
-    <input type="email" placeholder="Email/Username Address" name="email">
-    <input type="password" placeholder="Password" name="password1">
+        <p>Reset password - <a class="text-blue-800" href="/resetpass">click hare</a></p>
+    
+        <button class="bg-blue-800 hover:bg-blue-700 py-2 rounded text-white font-semibold text-2sm">login</button>
 
-    <button>login</button>
-</form>
+        <p>Don't have account please <a class="text-blue-800 hover:text-blue-700" href="/register">register now?</a></p>
+    </form>
+  
+</div>
 <%-include("./partials/footer")%>

@@ -4,6 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//passport setup
+const passport = require("passport")
+const session = require("express-session")
+const userModel = require("./model/userSchema")
+//ens
+
 const db = require("./model/connect")
 
 var indexRouter = require('./routes/index');
@@ -20,6 +26,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//passport setup
+app.use(
+  session({
+    saveUninitialized:true,
+    resave:true,
+    secret:"ertyuiop"
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+passport.serializeUser(userModel.serializeUser());
+passport.deserializeUser(userModel.deserializeUser());
+//passport setup end
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

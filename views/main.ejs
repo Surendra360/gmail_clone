@@ -1,7 +1,22 @@
 <%-include("./partials/header")%>
 <%-include("./partials/nav")%>
-  <form action="/" method="post">
-    <input type="email" name="email" placeholder="entre mail id">
-    <button>send</button>
+<div class="h-screen flex flex-col items-center gap-10 mt-20">
+  <h1 class="text-4xl border-b-2 border-gray-600 py-2 ">Gmail.com</h1>
+  <form class="w-[30%] flex flex-col gap-5" action="/main" method="post">
+      <div class="flex-col flex gap-2">
+          <label >Enter email</label>
+          <input class="outline-none px-2 border-b-2 border-gray-500 border-rounderd" type="email" placeholder="abc@gmail.com" name="email">
+      </div>
+      <div class="flex-col flex gap-2">
+        <label >Enter message</label>
+        <textarea name="message" rows="5" class="border border-black w-[100%]"></textarea>
+      </div>
+      
+      <button class="bg-blue-800 hover:bg-blue-700 py-2 rounded text-white font-semibold text-2sm">send</button>
+
+      
   </form>
+
+</div>
 <%-include("./partials/footer")%>
+
